@@ -1,7 +1,10 @@
 package futurepack.api.interfaces;
 
-import futurepack.api.FunkPacket;
+import futurepack.api.PacketBase;
 
+/**
+ * Implement this in your {@link net.minecraft.tileentity.TileEntity} and you will receive packets from the network. This is used for the research modules.
+ */
 public interface ITileNetwork
 {
 	/**
@@ -17,5 +20,5 @@ public interface ITileNetwork
 	/**
 	 * Wires Dont recive packets
 	 */
-	public void onFunkPacket(FunkPacket pkt);
+	public void onFunkPacket(PacketBase pkt);
 }

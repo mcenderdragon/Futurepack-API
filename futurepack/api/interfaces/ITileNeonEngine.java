@@ -2,6 +2,9 @@ package futurepack.api.interfaces;
 
 import net.minecraft.util.EnumFacing;
 
+/**
+ * Implement this in you {@link net.minecraft.tileentity.TileEntity} to get powered by NeonEnergie.
+ */
 public interface ITileNeonEngine 
 {
 	
@@ -17,6 +20,9 @@ public interface ITileNeonEngine
 	
 	public boolean canPowerTo(ITileNeonEngine engine, EnumFacing side);
 	
+	/**
+	 * this determines if you get power and from who.
+	 */
 	public EnumPowerMode getType();
 	
 	/**
@@ -26,7 +32,22 @@ public interface ITileNeonEngine
 	
 	public static enum EnumPowerMode
 	{
-		PRODUCE(1), WIRE(2), USE(3), NONE(0);
+		/**
+		 * dont get power only send power
+		 */
+		PRODUCE(1),
+		/**
+		 * get only power from PRODUCE
+		 */
+		WIRE(2),
+		/**
+		 * gets power from everyone
+		 */
+		USE(3),
+		/**
+		 * this is as if you have not implemented the interface
+		 */
+		NONE(0);
 		
 		private EnumPowerMode(int  p)
 		{
