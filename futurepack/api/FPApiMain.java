@@ -7,12 +7,21 @@ import net.minecraft.item.ItemStack;
 import futurepack.api.interfaces.IPlanet;
 import futurepack.api.interfaces.IScanPart;
 
-public class FPApiIMain
+/**
+ * This is the Main registering class.
+ * It uses reflect so its sve even if the Futurepack is not present
+ */
+public class FPApiMain
 {
 	
 	
 	
-	
+	/**
+	 * If you want to Display bonus informations if someone scan a Block/Entity
+	 * 
+	 * @param pos is to order all Entrys.
+	 * @param entry is to produce the text displayed.
+	 */
 	public static void registerScanPart(EnumScanPosition pos, IScanPart entry)
 	{
 		if(isFPpresend())
@@ -25,6 +34,10 @@ public class FPApiIMain
 		}
 	}
 	
+	/**
+	 * Register your Dimension here if anyone should be able to fly/jump to it 
+	 * @param planet the the {@link IPlanet} to more information
+	 */
 	public static void registerPlanet(IPlanet planet)
 	{
 		if(isFPpresend())
@@ -37,6 +50,11 @@ public class FPApiIMain
 		}
 	}
 	
+	/**
+	 * Adds a recipe to the Assemblytable
+	 * @param in ItemStacks required for the recipe (max. 3)
+	 * @param out the resulting ItemStack
+	 */
 	public static void addAssemblyRecipe(ItemStack[] in, ItemStack out)
 	{
 		if(isFPpresend())
@@ -49,6 +67,11 @@ public class FPApiIMain
 		}
 	}
 	
+	/**
+	 * Adds a recipe to the SuperCrusher
+	 * @param in the ItemStack that will be crushed.
+	 * @param out the resulting ItemStack ( e.g. a Dust)
+	 */
 	public static void addCrushingRecipe(ItemStack in, ItemStack out)
 	{
 		if(isFPpresend())
@@ -61,6 +84,11 @@ public class FPApiIMain
 		}
 	}
 	
+	/**
+	 * Adds a recipe to the IndustrialFurnace (the one with Lava)
+	 * @param in ItemStacks required for the recipe (max. 3)
+	 * @param out the resulting ItemStack
+	 */
 	public static void addIndustrialFurnaceRecipe(ItemStack[] in, ItemStack out)
 	{
 		if(isFPpresend())
@@ -73,6 +101,12 @@ public class FPApiIMain
 		}
 	}
 	
+	/**
+	 * Adds a recipe to the IndustrialNeonFurnace (the one with Neon and support)
+	 * @param in ItemStacks required for the recipe (max. 3)
+	 * @param out the resulting ItemStack
+	 * @param support the amount of support points needed for that recipe
+	 */
 	public static void addIndustrialNeonFurnaceRecipe(ItemStack[] in, ItemStack out, int support)
 	{
 		if(isFPpresend())
