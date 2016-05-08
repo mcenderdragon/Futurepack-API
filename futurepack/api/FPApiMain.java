@@ -9,7 +9,7 @@ import futurepack.api.interfaces.IScanPart;
 
 /**
  * This is the Main registering class.
- * It uses reflect so its sve even if the Futurepack is not present
+ * It uses reflect so its save even if the Futurepack is not present
  */
 public class FPApiMain
 {
