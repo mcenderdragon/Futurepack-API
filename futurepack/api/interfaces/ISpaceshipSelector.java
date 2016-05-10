@@ -2,12 +2,19 @@ package futurepack.api.interfaces;
 
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
-import futurepack.depend.api.interfaces.ISpaceshipUpgrade;
 
 public interface ISpaceshipSelector
 {
+	/**
+	 * @return every Block (except Air) thats Part of the spaceship, even if the selector havn't found it.
+	 * Example: you build a sphere with block in it but nothing touches them. the Selector will only select the hull Blocks. This method will count these Blocks too.
+	 */
 	public int getBlockTotal();
 	
+	/**
+	 * @param up the Upgrade
+	 * @return if this Upgrade is installed or not.
+	 */
 	public boolean hasUpgrade(ISpaceshipUpgrade up);
 	
 	/**
@@ -62,5 +69,5 @@ public interface ISpaceshipSelector
 	 * @return the selector holding the block coordinates
 	 * 
 	 */
-	public IBlockSelector getSelector();
+	public ISelector getSelector();
 }

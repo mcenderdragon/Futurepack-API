@@ -1,11 +1,11 @@
 package futurepack.api;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import net.minecraft.item.ItemStack;
 import futurepack.api.interfaces.IPlanet;
 import futurepack.api.interfaces.IScanPart;
+import futurepack.api.interfaces.ISpaceshipUpgrade;
 
 /**
  * This is the Main registering class.
@@ -36,7 +36,7 @@ public class FPApiMain
 	
 	/**
 	 * Register your Dimension here if anyone should be able to fly/jump to it 
-	 * @param planet the the {@link IPlanet} to more information
+	 * @param planet see {@link IPlanet} for more information
 	 */
 	public static void registerPlanet(IPlanet planet)
 	{
@@ -50,6 +50,22 @@ public class FPApiMain
 		}
 	}
 	
+	/**
+	 * Register your upgrade for a Spaceship here.
+	 * @param upgrade see {@link ISpaceshipUpgrade} for more information.
+	 */
+	public static void registerShipUpgrade(ISpaceshipUpgrade upgrade)
+	{
+		if(isFPpresend())
+		{
+			try {
+				m_registerShipUpgrade.invoke(null, upgrade);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 	/**
 	 * Adds a recipe to the Assemblytable
 	 * @param in ItemStacks required for the recipe (max. 3)
@@ -123,6 +139,7 @@ public class FPApiMain
 	
 	private static Method m_registerScanPart;
 	private static Method m_registerPlanet;
+	private static Method m_registerShipUpgrade;
 	private static Method m_addAssemblyRecipe;
 	private static Method m_addCrushingRecipe;
 	private static Method m_addIndustrialFurnaceRecipe;
@@ -145,6 +162,7 @@ public class FPApiMain
 				
 				m_registerScanPart = c.getMethod("registerScanPart", EnumScanPosition.class, IScanPart.class);
 				m_registerPlanet = c.getMethod("registerPlanet", IPlanet.class);
+				m_registerShipUpgrade = c.getMethod("registerShipUpgrade", ISpaceshipUpgrade.class);
 				m_addAssemblyRecipe = c.getMethod("addAssemblyRecipe", ItemStack[].class, ItemStack.class);
 				m_addCrushingRecipe = c.getMethod("addCrushingRecipe", ItemStack.class, ItemStack.class);
 				m_addIndustrialFurnaceRecipe = c.getMethod("addIndustrialFurnaceRecipe", ItemStack[].class, ItemStack.class); 

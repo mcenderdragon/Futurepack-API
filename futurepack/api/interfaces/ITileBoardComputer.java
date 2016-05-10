@@ -1,10 +1,9 @@
 package futurepack.api.interfaces;
 
 import futurepack.api.EnumStateSpaceship;
-import futurepack.depend.api.interfaces.ISpaceshipUpgrade;
 
 /**
- * This is to determine if the given BoardComputer is good enough for a spaceship upgrade ({@link futurepack.depend.api.interfaces.ISpaceshipUpgrade})
+ * This is to determine if the given BoardComputer is good enough for a spaceship upgrade ({@link futurepack.api.interfaces.ISpaceshipUpgrade})
  */
 public interface ITileBoardComputer
 {
