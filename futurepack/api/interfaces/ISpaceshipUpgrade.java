@@ -1,7 +1,6 @@
 package futurepack.api.interfaces;
 
 import net.minecraft.tileentity.TileEntity;
-import futurepack.common.spaceships.FPSpaceShipSelector;
 
 public interface ISpaceshipUpgrade
 {

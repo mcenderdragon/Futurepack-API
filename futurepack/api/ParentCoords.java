@@ -1,6 +1,6 @@
 package futurepack.api;
 
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 
 /**
  * This is a simple extension of the vanilla BlockPos.

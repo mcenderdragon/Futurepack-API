@@ -2,8 +2,8 @@ package futurepack.api;
 
 import java.util.ArrayList;
 
-import net.minecraft.util.BlockPos;
 import futurepack.api.interfaces.ITileNetwork;
+import net.minecraft.util.math.BlockPos;
 
 /**
  * This is the base packet sended in the Network. (Ingame)
