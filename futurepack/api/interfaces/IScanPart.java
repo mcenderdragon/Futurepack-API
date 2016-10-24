@@ -1,8 +1,8 @@
 package futurepack.api.interfaces;
 
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.IChatComponent;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -19,7 +19,7 @@ public interface IScanPart
 	 * @param inGUI if true its in the EScanner, false in the normal chat. (use it for different colors -> better readable)
 	 * @return the ChatComponent
 	 */
-	public IChatComponent doBlock(World w, BlockPos pos, boolean inGUI);
+	public ITextComponent doBlock(World w, BlockPos pos, boolean inGUI);
 	
 	/**
 	 * Called if an Entity is scanned. Return null if nothing should added or a chat component
@@ -29,6 +29,6 @@ public interface IScanPart
 	 * @param inGUI if true its in the EScanner, false in the normal chat.(use it for different colors -> better readable)
 	 * @return the ChatComponent
 	 */
-	public IChatComponent doEntity(World w, EntityLivingBase e, boolean inGUI);
+	public ITextComponent doEntity(World w, EntityLivingBase e, boolean inGUI);
 
 }

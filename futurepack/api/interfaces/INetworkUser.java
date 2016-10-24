@@ -1,8 +1,8 @@
 package futurepack.api.interfaces;
 
-import net.minecraft.util.BlockPos;
-import net.minecraft.world.World;
 import futurepack.api.PacketBase;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 
 /**
  * This is needed for everything that sends a {@link futurepack.api.PacketBase}

@@ -2,9 +2,9 @@ package futurepack.api.interfaces;
 
 import java.util.Collection;
 
+import futurepack.api.ParentCoords;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
-import futurepack.api.ParentCoords;
 
 public interface ISelector
 {

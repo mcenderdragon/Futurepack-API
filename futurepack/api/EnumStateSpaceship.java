@@ -1,8 +1,9 @@
 package futurepack.api;
 
-import net.minecraft.util.ChatComponentTranslation;
-import net.minecraft.util.ChatStyle;
-import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextFormatting;
+
 
 /**
  * This enum used to check if a spaceship can jump.  
@@ -46,18 +47,18 @@ public enum EnumStateSpaceship
 	/**
 	 * This returns the unformated (colors, ...) translated chat message
 	 */
-	public ChatComponentTranslation getRawChat(Object ...args)
+	public TextComponentTranslation getRawChat(Object ...args)
 	{
-		return new ChatComponentTranslation("chat.spaceship." + this.name(),args);
+		return new TextComponentTranslation("chat.spaceship." + this.name(),args);
 	}
 	
 	/**
 	 * Return the translated chat message with colors.
 	 */
-	public ChatComponentTranslation getChatFormated(Object ...args)
+	public TextComponentTranslation getChatFormated(Object ...args)
 	{
-		ChatComponentTranslation trans = getRawChat(args);
-		trans.setChatStyle(new ChatStyle().setColor(EnumChatFormatting.RED));
+		TextComponentTranslation trans = getRawChat(args);
+		trans.setStyle(new Style().setColor(TextFormatting.RED));
 		return trans;
 	}
 }

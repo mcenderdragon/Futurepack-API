@@ -2,10 +2,10 @@ package futurepack.api;
 
 import java.lang.reflect.Method;
 
-import net.minecraft.item.ItemStack;
 import futurepack.api.interfaces.IPlanet;
 import futurepack.api.interfaces.IScanPart;
 import futurepack.api.interfaces.ISpaceshipUpgrade;
+import net.minecraft.item.ItemStack;
 
 /**
  * This is the Main registering class.
