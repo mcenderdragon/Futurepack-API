@@ -1,5 +1,7 @@
 package futurepack.api.interfaces;
 
+import javax.annotation.Nonnull;
+
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.util.math.BlockPos;
@@ -21,6 +23,7 @@ public interface IBlockColorAble
 	 * @param col the color inside the airbrush
 	 * @return the new BlockStateContainer (not null just pass the state)
 	 */
+	@Nonnull
 	public IBlockState setColor(World w, BlockPos pos, IBlockState state, EnumDyeColor col);
 	
 	/**
@@ -30,6 +33,7 @@ public interface IBlockColorAble
 	 * @param state the current block state
 	 * @return the new BlockStateContainer (not null, just pass the state)
 	 */
+	@Nonnull
 	public IBlockState removeColor(World w, BlockPos pos, IBlockState state);
 
 	
