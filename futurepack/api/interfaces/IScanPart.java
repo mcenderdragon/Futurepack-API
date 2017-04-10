@@ -2,6 +2,7 @@ package futurepack.api.interfaces;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
@@ -17,9 +18,10 @@ public interface IScanPart
 	 * @param w the World
 	 * @param pos the Postiion
 	 * @param inGUI if true its in the EScanner, false in the normal chat. (use it for different colors -> better readable)
+	 * @param res 
 	 * @return the ChatComponent
 	 */
-	public ITextComponent doBlock(World w, BlockPos pos, boolean inGUI);
+	public ITextComponent doBlock(World w, BlockPos pos, boolean inGUI, RayTraceResult res);
 	
 	/**
 	 * Called if an Entity is scanned. Return null if nothing should added or a chat component
