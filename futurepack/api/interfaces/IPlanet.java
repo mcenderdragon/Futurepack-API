@@ -27,5 +27,10 @@ public interface IPlanet
 	/**
 	 * @return the Names of the Ship-Upgrades needed to travel to this Planet. e.g. 'drive.FTL'
 	 */
-	public String[] getReqiredShipUpgrades();
+	public String[] getRequiredShipUpgrades();
+	
+	/**
+	 * @return if the Player can breath freely on this planet. If not it is like you are under water.(So the air bar is visible and the bubbles decrease)
+	 */
+	public boolean hasBreathableAtmosphere();
 }
