@@ -1,5 +1,10 @@
 package futurepack.api.interfaces;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
 import javax.annotation.Nonnull;
 
 import net.minecraft.block.state.IBlockState;
@@ -21,7 +26,7 @@ public interface IBlockColorAble
 	 * @param pos the Postion of the Block
 	 * @param state the current block state
 	 * @param col the color inside the airbrush
-	 * @return the new BlockStateContainer (not null just pass the state)
+	 * @return the new IBlockState (or the original state if not possible)
 	 */
 	@Nonnull
 	public IBlockState setColor(World w, BlockPos pos, IBlockState state, EnumDyeColor col);
@@ -31,10 +36,16 @@ public interface IBlockColorAble
 	 * @param w the World
 	 * @param pos the Postion
 	 * @param state the current block state
-	 * @return the new BlockStateContainer (not null, just pass the state)
+	 * @return the new IBlockState (or the original state if not possible)
 	 */
 	@Nonnull
 	public IBlockState removeColor(World w, BlockPos pos, IBlockState state);
 
 	
+	@Target(ElementType.TYPE)
+	@Retention(RetentionPolicy.RUNTIME)
+	public static @interface OnlyDefaultState
+	{
+		
+	}
 }
