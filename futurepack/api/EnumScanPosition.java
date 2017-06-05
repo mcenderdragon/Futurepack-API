@@ -2,6 +2,7 @@ package futurepack.api;
 
 /**
  * This is used if you scan something with the EScanner and get information
+ * Register here {@link futurepack.api.FPApiMain#registerScanPart(EnumScanPosition, futurepack.api.interfaces.IScanPart)}
  */
 public enum EnumScanPosition
 {

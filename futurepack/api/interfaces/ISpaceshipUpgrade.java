@@ -2,6 +2,9 @@ package futurepack.api.interfaces;
 
 import net.minecraft.tileentity.TileEntity;
 
+/**
+ * Register in {@link futurepack.api.FPApiMain#registerShipUpgrade(ISpaceshipUpgrade)}
+ */
 public interface ISpaceshipUpgrade
 {
 	/**

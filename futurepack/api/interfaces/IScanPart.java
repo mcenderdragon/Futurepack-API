@@ -9,6 +9,7 @@ import net.minecraft.world.World;
 /**
  * This interface is used to add custom information to the gui of the Escanner, after scanning something.
  * It is registered in {@link futurepack.common.research.ScanningManager} (API method will follow)
+ * Register in {@link futurepack.api.FPApiMain#registerScanPart(futurepack.api.EnumScanPosition, IScanPart)}
  */
 public interface IScanPart
 {

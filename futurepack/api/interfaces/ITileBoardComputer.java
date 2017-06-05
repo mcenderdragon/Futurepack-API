@@ -10,7 +10,7 @@ public interface ITileBoardComputer
 	/**
 	 * Returns the status of the current spaceship.
 	 */
-	public EnumStateSpaceship getState();
+	public boolean getState(EnumStateSpaceship state);
 	
 	/**
 	 * Returns if this is the Advanced version of the BoardComputer

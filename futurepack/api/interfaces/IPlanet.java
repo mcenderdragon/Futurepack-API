@@ -4,6 +4,7 @@ import net.minecraft.util.ResourceLocation;
 
 /**
  * This is used in the BoardcomputerGui
+ * Registered in {@link futurepack.api.FPApiMain#registerPlanet(IPlanet)}
  */
 public interface IPlanet
 {
