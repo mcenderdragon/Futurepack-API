@@ -2,7 +2,6 @@ package futurepack.api.interfaces;
 
 import futurepack.api.ItemPredicates;
 import net.minecraft.item.ItemStack;
-import net.minecraft.stats.Achievement;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -16,9 +15,9 @@ public interface IResearch
 	public IResearch[] getParents();
 	
 	/**
-	 * @return an Array of Achievements needed for this to be researchable
+	 * @return an Array of Advancement names needed for this to be researchable
 	 */
-	public Achievement[] getGrandparents();
+	public ResourceLocation[] getGrandparents();	
 	
 	@SideOnly(Side.CLIENT)
 	public String getLocalizedName();
