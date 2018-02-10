@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.annotation.Nonnull;
 
@@ -24,7 +25,7 @@ public class FPTagDictionary
 {
 	private static List<String> IDtoName = new ArrayList<String>();
 	private static Map<String, Integer> NametoID = new HashMap<String, Integer>();
-	private static Map<Integer, ArrayList<Integer>> IDtoStack = new HashMap<Integer, ArrayList<Integer>>();
+	private static Map<Integer, ArrayList<ItemStack>> IDtoStack = new HashMap<Integer, ArrayList<ItemStack>>();
 	private static Map<Integer, ArrayList<Integer>> StacktoID = new HashMap<Integer, ArrayList<Integer>>();
 	
 	private static boolean init = false;
@@ -64,13 +65,10 @@ public class FPTagDictionary
 			addWithColor(Block.getBlockFromName("fp:advanced_boardcomputer"));
 			addWithColor(Block.getBlockFromName("fp:flash_server"));
 			
-			
-			
 			//wandrope
 			//solar panel
 			//ion collecotr
 			//water turbin
-			
 			
 			register(new ItemStack(Block.getBlockFromName("fp:industrie_ofen"),1,0), "industrie_ofen");
 			
@@ -161,6 +159,7 @@ public class FPTagDictionary
 				if(Collections.binarySearch(list, key) < 0)
 					return false;
 			}
+			return true;
 			
 		}
 		return false;
@@ -234,26 +233,25 @@ public class FPTagDictionary
 		}
 		
 		int stackHash = hash(item);
-		ArrayList<Integer> stacks = IDtoStack.get(tagID);
+		ArrayList<ItemStack> stacks = IDtoStack.get(tagID);
 		if(stacks == null)
 		{
-			stacks = new ArrayList<Integer>();
+			stacks = new ArrayList<ItemStack>();
 			IDtoStack.put(tagID, stacks);
-		}			
-		if(stacks.contains(stackHash))
-			return;	
-		
-		stacks.add(stackHash);
-		
-		ArrayList<Integer> ids = StacktoID.get(stackHash);
+		}
+		ArrayList<Integer> ids = StacktoID.get(stackHash);		
 		if(ids == null)
 		{
 			ids = new ArrayList<Integer>();
 			StacktoID.put(stackHash, ids);
-		}
+		}		
+		
+		if(stacks.contains(item))
+			return;	
 		if(ids.contains(tagID))
 			return;
 		
+		stacks.add(item);
 		ids.add(tagID);
 	}
 	
@@ -262,7 +260,7 @@ public class FPTagDictionary
 		if(it==null)
 			return 0;
 		
-		int id = Item.getIdFromItem(it.getItem());
+		int id = Item.REGISTRY.getIDForObject(it.getItem().delegate.get()); //Same as in OreDict to have same ids even after id remapping
 		int meta = it.getItemDamage();
 		return id << 16 | meta;
 	}
@@ -275,5 +273,29 @@ public class FPTagDictionary
 			ss[i] = IDtoName.get(ids[i]);
 		}
 		return ss;
+	}
+	
+	public static void rebakeMap()
+	{
+		StacktoID.clear();
+		for(Entry<Integer, ArrayList<ItemStack>> e : IDtoStack.entrySet())
+		{
+			ArrayList<ItemStack> items = e.getValue();
+			int tagID = e.getKey();
+			for(ItemStack it : items)
+			{
+				int stackHash = hash(it);
+				ArrayList<Integer> ids = StacktoID.get(stackHash);
+				if(ids == null)
+				{
+					ids = new ArrayList<Integer>();
+					StacktoID.put(stackHash, ids);
+				}
+				if(ids.contains(tagID))
+					return;
+				
+				ids.add(tagID);
+			}
+		}
 	}
 }
