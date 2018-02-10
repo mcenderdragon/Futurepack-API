@@ -13,4 +13,4 @@ A small Api for the Futurepack
 
 [Twitter](https://twitter.com/MCenderdragonxD)
 
-[![Patreon](http://i.imgur.com/k44o58p.png)](https://www.patreon.com/mcenderdragon)
+[<img alt="Patreon" src=http://i.imgur.com/k44o58p.png width=256\>](https://www.patreon.com/mcenderdragon)
