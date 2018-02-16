@@ -5,7 +5,10 @@ import java.lang.reflect.Method;
 import futurepack.api.interfaces.IPlanet;
 import futurepack.api.interfaces.IScanPart;
 import futurepack.api.interfaces.ISpaceshipUpgrade;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.event.FMLInterModComms;
 
 /**
  * This is the Main registering class.
@@ -133,6 +136,15 @@ public class FPApiMain
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	/**
+	 * This adds a blockstate to a whitelsit of always breakable blocks. THis is used int the dungeons to ensure you can still break gravestones and things like that.
+	 * @param res the id of the block to whitelist
+	 */
+	public static void addBreakAbleBlockToWHitelist(ResourceLocation res)
+	{
+		FMLInterModComms.sendMessage("fp", "dungeon.whitelist", res);
 	}
 	
 	private static boolean checked, present;
