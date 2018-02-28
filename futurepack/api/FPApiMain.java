@@ -74,12 +74,12 @@ public class FPApiMain
 	 * @param in ItemStacks required for the recipe (max. 3)
 	 * @param out the resulting ItemStack
 	 */
-	public static void addAssemblyRecipe(ItemStack[] in, ItemStack out)
+	public static void addAssemblyRecipe(String id, ItemStack[] in, ItemStack out)
 	{
 		if(isFPpresend())
 		{
 			try {
-				m_addAssemblyRecipe.invoke(null, in,out);
+				m_addAssemblyRecipe.invoke(null, id,in,out);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -108,12 +108,12 @@ public class FPApiMain
 	 * @param in ItemStacks required for the recipe (max. 3)
 	 * @param out the resulting ItemStack
 	 */
-	public static void addIndustrialFurnaceRecipe(ItemStack[] in, ItemStack out)
+	public static void addIndustrialFurnaceRecipe(String id, ItemStack[] in, ItemStack out)
 	{
 		if(isFPpresend())
 		{
 			try {
-				m_addIndustrialFurnaceRecipe.invoke(null, in, out);
+				m_addIndustrialFurnaceRecipe.invoke(null, id, in, out);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -126,12 +126,12 @@ public class FPApiMain
 	 * @param out the resulting ItemStack
 	 * @param support the amount of support points needed for that recipe
 	 */
-	public static void addIndustrialNeonFurnaceRecipe(ItemStack[] in, ItemStack out, int support)
+	public static void addIndustrialNeonFurnaceRecipe(String id, ItemStack[] in, ItemStack out, int support)
 	{
 		if(isFPpresend())
 		{
 			try {
-				m_addIndustrialNeonFurnaceRecipe.invoke(null, in, out, support);
+				m_addIndustrialNeonFurnaceRecipe.invoke(null, id, in, out, support);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -175,10 +175,10 @@ public class FPApiMain
 				m_registerScanPart = c.getMethod("registerScanPart", EnumScanPosition.class, IScanPart.class);
 				m_registerPlanet = c.getMethod("registerPlanet", IPlanet.class);
 				m_registerShipUpgrade = c.getMethod("registerShipUpgrade", ISpaceshipUpgrade.class);
-				m_addAssemblyRecipe = c.getMethod("addAssemblyRecipe", ItemStack[].class, ItemStack.class);
+				m_addAssemblyRecipe = c.getMethod("addAssemblyRecipe", String.class, ItemStack[].class, ItemStack.class);
 				m_addCrushingRecipe = c.getMethod("addCrushingRecipe", ItemStack.class, ItemStack.class);
-				m_addIndustrialFurnaceRecipe = c.getMethod("addIndustrialFurnaceRecipe", ItemStack[].class, ItemStack.class); 
-				m_addIndustrialNeonFurnaceRecipe = c.getMethod("addIndustrialNeonFurnaceRecipe", ItemStack[].class, ItemStack.class, int.class);
+				m_addIndustrialFurnaceRecipe = c.getMethod("addIndustrialFurnaceRecipe", String.class, ItemStack[].class, ItemStack.class); 
+				m_addIndustrialNeonFurnaceRecipe = c.getMethod("addIndustrialNeonFurnaceRecipe", String.class, ItemStack[].class, ItemStack.class, int.class);
 				
 				return true;
 			}

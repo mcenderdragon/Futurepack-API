@@ -260,7 +260,7 @@ public class FPTagDictionary
 		if(it==null)
 			return 0;
 		
-		int id = Item.REGISTRY.getIDForObject(it.getItem().delegate.get()); //Same as in OreDict to have same ids even after id remapping
+		int id = Item.getIdFromItem(it.getItem()); //Same as in OreDict to have same ids even after id remapping
 		int meta = it.getItemDamage();
 		return id << 16 | meta;
 	}
