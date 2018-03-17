@@ -2,7 +2,6 @@ package futurepack.api.interfaces;
 
 import javax.annotation.Nullable;
 
-import futurepack.common.block.multiblock.DeepCoreLogic;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumParticleTypes;
 
@@ -38,8 +37,14 @@ public interface IItemDeepCoreLens
 	
 	int getMaxDurability(ItemStack item, IDeepCoreLogic logic);
 
+	/**
+	 * This method is called every frame op spawn  particles so return not a particle on every tick or it will cause lags 
+	 * @param lenseStack the Lense installed
+	 * @param logic the DeepCore
+	 * @return return a article to spawn or null.
+	 */
 	@Nullable
-	default EnumParticleTypes randomParticle(ItemStack lenseStack, DeepCoreLogic logic)
+	default EnumParticleTypes randomParticle(ItemStack lenseStack, IDeepCoreLogic logic)
 	{
 		return null;
 	}
