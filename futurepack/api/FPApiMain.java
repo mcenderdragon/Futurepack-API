@@ -5,7 +5,6 @@ import java.lang.reflect.Method;
 import futurepack.api.interfaces.IPlanet;
 import futurepack.api.interfaces.IScanPart;
 import futurepack.api.interfaces.ISpaceshipUpgrade;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.event.FMLInterModComms;

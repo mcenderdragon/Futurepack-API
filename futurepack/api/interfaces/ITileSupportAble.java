@@ -50,6 +50,15 @@ public interface ITileSupportAble
 	 * Only called for wires if the get powered
 	 */
 	public void support();
+
+	/**
+	 * @param ki the other SupportAble
+	 * @return true if this should send SP to ki
+	 */
+	public default boolean canSendSupport(ITileSupportAble ki)
+	{
+		return true;
+	}
 	
 	public enum EnumSupportType
 	{
