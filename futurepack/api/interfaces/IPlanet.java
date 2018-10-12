@@ -34,4 +34,24 @@ public interface IPlanet
 	 * @return if the Player can breath freely on this planet. If not it is like you are under water.(So the air bar is visible and the bubbles decrease)
 	 */
 	public boolean hasBreathableAtmosphere();
+	
+	/**
+	 * Only for planets with non breathable-atmosphere for the oxygen simulation.
+	 * spread: air will "leak" to other blocks
+	 * @return the speed in m/s, 0.0 - 20.0
+	 */
+	public default float getSpreadVelocity()
+	{
+		return 1F;
+	}
+	
+	/**
+	 * The gravity based speed value at which the oxygen will fly/sink  into the rest of the atmosphere
+	 * Negative: air will sink to the ground; positive: it will fly to the sky
+	 * @return the speed in m/s, -20.0 - 20.0
+	 */
+	public default float getGravityVelocity()
+	{
+		return -0.1F;
+	}
 }
