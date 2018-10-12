@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.annotation.Nonnull;
 
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -25,8 +27,8 @@ public class FPTagDictionary
 {
 	private static List<String> IDtoName = new ArrayList<String>();
 	private static Map<String, Integer> NametoID = new HashMap<String, Integer>();
-	private static Map<Integer, ArrayList<ItemStack>> IDtoStack = new HashMap<Integer, ArrayList<ItemStack>>();
-	private static Map<Integer, ArrayList<Integer>> StacktoID = new HashMap<Integer, ArrayList<Integer>>();
+	private static Map<Integer, ArrayList<ItemStack>> IDtoStack = new Int2ObjectOpenHashMap<ArrayList<ItemStack>>();
+	private static Map<Integer, ArrayList<Integer>> StacktoID = new Int2ObjectOpenHashMap<ArrayList<Integer>>();
 	
 	private static boolean init = false;
 	
@@ -92,9 +94,9 @@ public class FPTagDictionary
 	
 	private static void addWithColor(Block bl)
 	{
-		register(new ItemStack(bl, 1, 2), bl.getRegistryName().getResourcePath(), "color.white");
-		register(new ItemStack(bl, 1, 6), bl.getRegistryName().getResourcePath(), "color.silver");
-		register(new ItemStack(bl, 1, 10), bl.getRegistryName().getResourcePath(), "color.black");
+		register(new ItemStack(bl, 1, 2), bl.getRegistryName().getPath(), "color.white");
+		register(new ItemStack(bl, 1, 6), bl.getRegistryName().getPath(), "color.silver");
+		register(new ItemStack(bl, 1, 10), bl.getRegistryName().getPath(), "color.black");
 	}
 	
 	/**
@@ -198,6 +200,37 @@ public class FPTagDictionary
 		return StacktoID.keySet();
 	}
 	
+	public static ArrayList<ItemStack> getItemsMatching(int...tags)
+	{
+		ArrayList<ItemStack>[] lists = new ArrayList[tags.length];
+		int length = Integer.MAX_VALUE;
+		int pos = 0;
+		for(int i=0;i<tags.length;i++)
+		{
+			lists[i] = IDtoStack.get(tags);
+			if(lists[i].size() < length)
+			{
+				pos = i;
+				length = lists[i].size();
+			}
+		}
+		
+		ArrayList<ItemStack> matching = new ArrayList(length);
+		if(length>0)
+		{
+			Iterator<ItemStack> iter = lists[pos].iterator();
+			lists = null;
+			while(iter.hasNext())
+			{
+				ItemStack it = iter.next();
+				if(hasTags(it, tags))
+				{
+					matching.add(it);
+				}
+			}
+		}
+		return matching;
+	}
 	/**
 	 * 
 	 * @param item The ItemStack to register
