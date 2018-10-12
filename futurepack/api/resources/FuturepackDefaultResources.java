@@ -29,6 +29,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class FuturepackDefaultResources
 {
+	public static final boolean allowDownloading = false;
+	
 	
 	public static void downloadFuturepackRersources()
 	{
@@ -36,6 +38,7 @@ public class FuturepackDefaultResources
 		try {
 			AssetsDownloader down = new AssetsDownloader("Futurepack", "1.12.2", assets);
 			registerFuturepackDefaults(down);
+			down.getResourcesToDownload().forEach(r -> r.doDownload = allowDownloading);
 			Thread t = new Thread(down, down.toString());
 			t.start();
 		} catch (JsonIOException e) {

@@ -239,6 +239,8 @@ public class AssetsDownloader implements Runnable
 		Boolean downloaded = null;
 		File localFile = null;
 		
+		public boolean doDownload = true;
+		
 		public Resource(String filename, ResourceLocation res, URL file, URL sha1Hash, long size, String hash)
 		{
 			super();
@@ -391,31 +393,35 @@ public class AssetsDownloader implements Runnable
 				}
 			}
 			
-			File downloadFile = File.createTempFile(filename, ".part");
-			FileOutputStream out = new FileOutputStream(downloadFile);
-			AssetsManager.downloadContent(url, out);
-			out.close();
-				
-			localHash = AssetsManager.toHexHash(AssetsManager.createFileHash(new FileInputStream(downloadFile))).toLowerCase();
-				
-			if(localHash.equals(getServerHash(true)))
+			if(doDownload)
 			{
-				Path from = downloadFile.toPath();
-				Path target = AssetsManager.getFile(objectsDir, localHash).toPath();
-				Files.move(from, target, StandardCopyOption.REPLACE_EXISTING);
-				localFile = target.toFile();
-				downloaded = true;
-				return true;
-			}
-			else
-			{
-				if(!downloadFile.delete())
+				File downloadFile = File.createTempFile(filename, ".part");
+				FileOutputStream out = new FileOutputStream(downloadFile);
+				AssetsManager.downloadContent(url, out);
+				out.close();
+					
+				localHash = AssetsManager.toHexHash(AssetsManager.createFileHash(new FileInputStream(downloadFile))).toLowerCase();
+					
+				if(localHash.equals(getServerHash(true)))
 				{
-					downloadFile.deleteOnExit();
-					System.out.println("Could not delete incorrect (hash mismatch) download at " + downloaded);
+					Path from = downloadFile.toPath();
+					Path target = AssetsManager.getFile(objectsDir, localHash).toPath();
+					Files.move(from, target, StandardCopyOption.REPLACE_EXISTING);
+					localFile = target.toFile();
+					downloaded = true;
+					return true;
 				}
-				return false;
+				else
+				{
+					if(!downloadFile.delete())
+					{
+						downloadFile.deleteOnExit();
+						System.out.println("Could not delete incorrect (hash mismatch) download at " + downloaded);
+					}
+				}
 			}
+			
+			return false;
 		}
 	}
 }
