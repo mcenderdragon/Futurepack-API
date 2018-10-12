@@ -22,7 +22,7 @@ public interface IResearch
 	@SideOnly(Side.CLIENT)
 	public String getLocalizedName();
 	
-	public String getUnlocalizedName();
+	public String getTranslationKey();
 	
 	public String getName();
 	

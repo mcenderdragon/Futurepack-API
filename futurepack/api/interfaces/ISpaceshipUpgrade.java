@@ -10,7 +10,7 @@ public interface ISpaceshipUpgrade
 	/**
 	 * @return the name of this upgrade. THis name will be used too link it with other Planets.
 	 */
-	public String getUnlocalizedName();
+	public String getTranslationKey();
 	
 	/**
 	 * Normally ship-upgrades are Blocks.
