@@ -16,6 +16,6 @@ A small Api for the Futurepack
 
 [Twitter](https://twitter.com/MCenderdragonxD)
 
-[Discord](discord.gg/UpdVfFk)
+[Discord](https://discord.gg/UpdVfFk)
 
 [<img alt="Patreon" src=http://i.imgur.com/k44o58p.png width=256\>](https://www.patreon.com/mcenderdragon)
