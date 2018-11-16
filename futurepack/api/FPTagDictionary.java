@@ -207,7 +207,7 @@ public class FPTagDictionary
 		int pos = 0;
 		for(int i=0;i<tags.length;i++)
 		{
-			lists[i] = IDtoStack.get(tags);
+			lists[i] = IDtoStack.get(tags[i]);
 			if(lists[i].size() < length)
 			{
 				pos = i;
