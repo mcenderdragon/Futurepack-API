@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.UnknownHostException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
@@ -319,6 +320,10 @@ public class AssetsDownloader implements Runnable
 					bout.close();
 				}
 				catch(FileNotFoundException e)
+				{
+					//can not get server hash
+				}
+				catch(UnknownHostException e)
 				{
 					//can not get server hash
 				}

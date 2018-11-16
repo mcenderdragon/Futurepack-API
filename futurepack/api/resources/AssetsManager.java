@@ -68,7 +68,8 @@ public class AssetsManager
 		if(con instanceof HttpURLConnection)
 		{
 			int code = ((HttpURLConnection) con).getResponseCode();
-			System.out.println("Conection: " + code);
+			if(code != 200)
+				System.out.println("Conection: " + code);
 			if(code >= 400)
 			{
 				throw new FileNotFoundException(url + " responded '" + ((HttpURLConnection) con).getResponseMessage() + "'");
@@ -201,7 +202,9 @@ public class AssetsManager
 	public static File getFile(File parentDir, String hexHash)
 	{
 		hexHash = hexHash.toLowerCase();
-		return new File(parentDir, hexHash.substring(0, 2) + "/" + hexHash);
+		File folder = new File(parentDir,  hexHash.substring(0, 2));
+		folder.mkdir();
+		return new File(folder, hexHash);
 	}
 	
 	public static void main(String[] args)

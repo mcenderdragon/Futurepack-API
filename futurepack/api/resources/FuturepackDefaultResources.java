@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Calendar;
 import java.util.Iterator;
 import java.util.function.Predicate;
 
@@ -36,11 +37,15 @@ public class FuturepackDefaultResources
 	{
 		File assets = new File(AssetsManager.getMinecraftDir(), "assets");
 		try {
-			AssetsDownloader down = new AssetsDownloader("Futurepack", "1.12.2", assets);
-			registerFuturepackDefaults(down);
-			down.getResourcesToDownload().forEach(r -> r.doDownload = allowDownloading);
-			Thread t = new Thread(down, down.toString());
-			t.start();
+			int year = Calendar.getInstance().get(Calendar.YEAR);
+			if(year <= 2019)//dont ddos the server from old clients
+			{
+				AssetsDownloader down = new AssetsDownloader("Futurepack", "1.12.2", assets);
+				registerFuturepackDefaults(down);
+				down.getResourcesToDownload().forEach(r -> r.doDownload = allowDownloading);
+				Thread t = new Thread(down, down.toString());
+				t.start();
+			}
 		} catch (JsonIOException e) {
 			e.printStackTrace();
 		} catch (JsonSyntaxException e) {
