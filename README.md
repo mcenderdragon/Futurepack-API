@@ -1,7 +1,7 @@
 [![](http://cf.way2muchnoise.eu/full_futurepack_downloads.svg)](https://minecraft.curseforge.com/projects/futurepack)
 [![](http://cf.way2muchnoise.eu/versions/Available%20For%20Minecraft_futurepack_all.svg)](https://minecraft.curseforge.com/projects/futurepack)
 [![](http://cf.way2muchnoise.eu/packs/futurepack.svg)](https://minecraft.curseforge.com/projects/futurepack)
-[![](https://cf.way2muchnoise.eu/supported/jei.svg)](https://minecraft.curseforge.com/projects/futurepack)
+[![](https://cf.way2muchnoise.eu/supported/futurepack.svg)](https://minecraft.curseforge.com/projects/futurepack)
 
 #  Futurepack Source
 You propably wonder where the source is: not here. Futureack is not open source, but rather visible source. You need a gitlab.com account and then simply mail me your name (goto.minecraft@gmail.com) and I will add you to the projekt. 
