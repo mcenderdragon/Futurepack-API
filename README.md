@@ -3,13 +3,27 @@
 [![](http://cf.way2muchnoise.eu/packs/futurepack.svg)](https://www.curseforge.com/minecraft/mc-mods/futurepack/relations/dependents?filter-related-dependents=6)
 [![](http://cf.way2muchnoise.eu/supported/futurepack.svg)](https://www.curseforge.com/minecraft/mc-mods/futurepack/relations/dependents)
 
-#  Futurepack Source
+#  Futurepack Source Repository
 You propably wonder where the source is: not here. Futureack is not open source, but rather visible source. You need a gitlab.com account and then simply mail me your name (goto.minecraft@gmail.com) and I will add you to the projekt. 
-
 
 # Futurepack-API
 A small Api for the Futurepack
 
+# Maven Integration
+Use this if you want to make an addon for the futurepack.
+```
+repositories 
+{
+  maven {
+    name = "ModMaven"
+    url = "https://modmaven.k-4u.nl"//location of the futurepack maven files.
+  }
+}
+dependencies {
+    compileOnly fg.deobf("redsnakegames.mcenderdragon.futurepack:1.14.4:${jei_version}:api") // compile against the Futurepack API
+    runtimeOnly fg.deobf("redsnakegames.mcenderdragon.futurepack:1.14.4:${jei_version}") // at runtime, use the full Futurepack jar
+}
+```
 [Futurepack Translation Project](https://github.com/Wugand/FuturePack-Language)
 
 [Futurepack Mod (Minecraftforum)](https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/minecraft-mods/2644868-futurepack-mod-discover-new-dimensions)
