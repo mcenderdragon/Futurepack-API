@@ -1,7 +1,8 @@
 package futurepack.api.interfaces;
 
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -15,7 +16,7 @@ public interface IBlockMonocartWaypoint
 	 * @param state the current blockstate
 	 * @return THe name of this waypoint
 	 */
-	public String getName(World w, BlockPos pos, IBlockState state);
+	public ITextComponent getName(World w, BlockPos pos, BlockState state);
 	
 	/**
 	 * @param w the World
@@ -23,5 +24,5 @@ public interface IBlockMonocartWaypoint
 	 * @param state the current blockstate
 	 * @return if this is realy a waypoint
 	 */
-	public boolean isWaypoint(World w, BlockPos pos, IBlockState state);
+	public boolean isWaypoint(World w, BlockPos pos, BlockState state);
 }

@@ -3,8 +3,11 @@ package futurepack.api.interfaces;
 import javax.annotation.Nullable;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.particles.IParticleData;
 
+/**
+ * Implement this into an item if it should be a useable lense for the DeepCoreMiner
+ */
 public interface IItemDeepCoreLens
 {
 
@@ -38,13 +41,13 @@ public interface IItemDeepCoreLens
 	int getMaxDurability(ItemStack item, IDeepCoreLogic logic);
 
 	/**
-	 * This method is called every frame op spawn  particles so return not a particle on every tick or it will cause lags 
+	 * This method is called every frame op spawn  ParticleTypes so return not a particle on every tick or it will cause lags 
 	 * @param lenseStack the Lense installed
 	 * @param logic the DeepCore
 	 * @return return a article to spawn or null.
 	 */
 	@Nullable
-	default EnumParticleTypes randomParticle(ItemStack lenseStack, IDeepCoreLogic logic)
+	default IParticleData randomParticle(ItemStack lenseStack, IDeepCoreLogic logic)
 	{
 		return null;
 	}

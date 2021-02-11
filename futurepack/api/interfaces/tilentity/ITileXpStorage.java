@@ -1,4 +1,4 @@
-package futurepack.api.interfaces;
+package futurepack.api.interfaces.tilentity;
 
 /**
  * This is used by the T3 modul for storing XP

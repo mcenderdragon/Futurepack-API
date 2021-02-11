@@ -16,7 +16,7 @@ public enum EnumLogisticIO implements IStringSerializable
 		if(s==null)
 			location=null;
 		else
-			location = new ResourceLocation("fp", s);
+			location = new ResourceLocation(Constants.MOD_ID, s);
 		this.in = in;
 		this.out = out;
 	}
@@ -41,7 +41,7 @@ public enum EnumLogisticIO implements IStringSerializable
 	}
 
 	@Override
-	public String getName()
+	public String getString()
 	{
 		return name().toLowerCase();
 	}

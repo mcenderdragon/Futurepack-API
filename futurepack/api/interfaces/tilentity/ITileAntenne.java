@@ -1,4 +1,4 @@
-package futurepack.api.interfaces;
+package futurepack.api.interfaces.tilentity;
 
 public interface ITileAntenne extends ITileNetwork
 {

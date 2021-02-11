@@ -1,10 +1,9 @@
 package futurepack.api.interfaces;
 
-import futurepack.api.ItemPredicates;
+import futurepack.api.ItemPredicateBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraft.util.text.ITextComponent;
 
 public interface IResearch
 {
@@ -19,8 +18,7 @@ public interface IResearch
 	 */
 	public ResourceLocation[] getGrandparents();	
 	
-	@SideOnly(Side.CLIENT)
-	public String getLocalizedName();
+	public ITextComponent getLocalizedName();
 	
 	public String getTranslationKey();
 	
@@ -43,7 +41,7 @@ public interface IResearch
 	/**
 	 * @return all needed ingredients 
 	 */
-	public ItemPredicates[] getNeeded();
+	public ItemPredicateBase[] getNeeded();
 	
 	public int getExpLvl();
 

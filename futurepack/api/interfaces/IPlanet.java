@@ -11,7 +11,12 @@ public interface IPlanet
 	/**
 	 * The id of the Dimension the spaceship will travel to.
 	 */
-	public int getDimenion();
+	public ResourceLocation getDimenionId();
+	
+//	default DimensionType getDimensionType()
+//	{
+//		return null;//TODO DimensionType.field_241497_i_.byName(getDimenionId());
+//	}
 	
 	/**
 	 * The Picture rendered if this Planet is displayed

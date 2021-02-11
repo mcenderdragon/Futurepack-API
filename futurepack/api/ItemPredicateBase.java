@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
 /**
  * This base class is used to determain if an ItemStack is valid.
  */
-public abstract class ItemPredicates implements Predicate<ItemStack>
+public abstract class ItemPredicateBase implements Predicate<ItemStack>
 {
 	/**
 	 * This is for GUi use, do NOT edit the returned ItemStack

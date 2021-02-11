@@ -1,8 +1,9 @@
 package futurepack.api;
 
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
-import futurepack.api.interfaces.ITileNetwork;
+import futurepack.api.interfaces.tilentity.ITileNetwork;
 import net.minecraft.util.math.BlockPos;
 
 /**
@@ -13,7 +14,7 @@ public class PacketBase
 	private BlockPos src;
 	private ITileNetwork sender;
 	
-	private ArrayList<ITileNetwork> users = new ArrayList<ITileNetwork>();
+	private Set<ITileNetwork> users = new HashSet<ITileNetwork>();
 	
 	public PacketBase(BlockPos src, ITileNetwork net)
 	{
@@ -27,7 +28,7 @@ public class PacketBase
 	 * 
 	 * @param net the receiver
 	 */
-	public void post(ITileNetwork net)
+	public final void post(ITileNetwork net)
 	{
 		if(!users.contains(net))
 		{

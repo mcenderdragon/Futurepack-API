@@ -3,8 +3,8 @@ package futurepack.api.event;
 import java.util.UUID;
 
 import futurepack.api.interfaces.IResearch;
-import net.minecraft.client.entity.EntityPlayerSP;
-import net.minecraftforge.fml.common.eventhandler.Event;
+import net.minecraft.client.entity.player.ClientPlayerEntity;
+import net.minecraftforge.eventbus.api.Event;
 
 public class ResearchFinishEvent extends Event
 {
@@ -37,14 +37,14 @@ public class ResearchFinishEvent extends Event
 	
 	public static class Client extends ResearchFinishEvent
 	{
-		private EntityPlayerSP sp;
+		private ClientPlayerEntity sp;
 		
-		public Client(EntityPlayerSP pl, IResearch res)
+		public Client(ClientPlayerEntity pl, IResearch res)
 		{
 			super(pl.getGameProfile().getId(), res);
 		}	
 		
-		public EntityPlayerSP getSinglePlayer()
+		public ClientPlayerEntity getSinglePlayer()
 		{
 			return sp;
 		}

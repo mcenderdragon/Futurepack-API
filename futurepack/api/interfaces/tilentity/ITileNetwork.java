@@ -1,4 +1,4 @@
-package futurepack.api.interfaces;
+package futurepack.api.interfaces.tilentity;
 
 import futurepack.api.PacketBase;
 

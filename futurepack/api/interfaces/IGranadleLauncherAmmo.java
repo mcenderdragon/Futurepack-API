@@ -1,7 +1,7 @@
 package futurepack.api.interfaces;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
@@ -28,5 +28,5 @@ public interface IGranadleLauncherAmmo
 	 * 
 	 * Note: you have to run setHeadingFromThrower(...) for the enity, or set it up other way
 	 */
-	public Entity createGrenade(World w, ItemStack it, EntityPlayer pl, float strength);
+	public Entity createGrenade(World w, ItemStack it, PlayerEntity pl, float strength);
 }

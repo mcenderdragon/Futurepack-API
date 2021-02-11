@@ -3,7 +3,6 @@ package futurepack.api.interfaces;
 import java.util.Collection;
 
 import futurepack.api.ParentCoords;
-import net.minecraft.block.Block;
 import net.minecraft.world.World;
 
 public interface ISelector
@@ -20,11 +19,8 @@ public interface ISelector
 	 */
 	public World getWorld();
 	
-	/**
-	 * @param b the Block type
-	 * @return the total of this Blocks selected
-	 */
-	public int getBlockCount(Block b);
+	
+	public IStatisticsManager getStatisticsManager();
 	
 	
 }

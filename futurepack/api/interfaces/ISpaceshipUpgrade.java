@@ -1,5 +1,6 @@
 package futurepack.api.interfaces;
 
+import futurepack.api.interfaces.tilentity.ITileBoardComputer;
 import net.minecraft.tileentity.TileEntity;
 
 /**

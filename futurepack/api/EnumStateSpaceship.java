@@ -1,8 +1,8 @@
 package futurepack.api;
 
 import net.minecraft.util.text.Style;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 
 /**
@@ -47,18 +47,18 @@ public enum EnumStateSpaceship
 	/**
 	 * This returns the unformated (colors, ...) translated chat message
 	 */
-	public TextComponentTranslation getRawChat(Object ...args)
+	public TranslationTextComponent getRawChat(Object ...args)
 	{
-		return new TextComponentTranslation("chat.spaceship." + this.name(),args);
+		return new TranslationTextComponent("chat.spaceship." + this.name(),args);
 	}
 	
 	/**
 	 * Return the translated chat message with colors.
 	 */
-	public TextComponentTranslation getChatFormated(Object ...args)
+	public TranslationTextComponent getChatFormated(Object ...args)
 	{
-		TextComponentTranslation trans = getRawChat(args);
-		trans.setStyle(new Style().setColor(TextFormatting.RED));
+		TranslationTextComponent trans = getRawChat(args);
+		trans.setStyle(Style.EMPTY.setFormatting(TextFormatting.RED));
 		return trans;
 	}
 }

@@ -3,7 +3,7 @@ package futurepack.api.interfaces;
 import javax.annotation.Nullable;
 
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
+import net.minecraft.util.Direction;
 
 /**
  * This interface is to interact with a working DeepCoreMultilock
@@ -14,7 +14,7 @@ public interface IDeepCoreLogic
 	 *  The DeepCore is rotatable. 
 	 * @return the current facing of the multiblock
 	 */
-	public EnumFacing getFacing();
+	public Direction getFacing();
 		
 	/**
 	 * @return The main {@link TileEntity}

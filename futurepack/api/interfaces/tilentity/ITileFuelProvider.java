@@ -1,4 +1,4 @@
-package futurepack.api.interfaces;
+package futurepack.api.interfaces.tilentity;
 
 /**
  * Used for spaceship Thrusters to power them.
