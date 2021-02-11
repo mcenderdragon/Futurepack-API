@@ -2,7 +2,7 @@
 name: Bug report
 about: Tell us what isn't working and with which mod version and forge version
 title: ''
-labels: Bug, 'Investigation needed'
+labels: Bug, Investigation-needed
 assignees: ''
 
 ---
