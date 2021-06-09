@@ -18,10 +18,14 @@ repositories
     name = "ModMaven"
     url = "https://modmaven.k-4u.nl"//location of the futurepack maven files.
   }
+  maven {
+    name = "RedSnakeMaven"
+    url = "https://redsnake-games.de/maven/"//self hosted maven in case modmaven is not available
+  }
 }
 dependencies {
-    compileOnly fg.deobf("redsnakegames.mcenderdragon.futurepack:<minecraft version>:<futurepack version>:api") // compile against the Futurepack API
-    runtimeOnly fg.deobf("redsnakegames.mcenderdragon.futurepack:<minecraft version>:<futurepack version>") // at runtime, use the full Futurepack jar
+    compileOnly fg.deobf("redsnakegames.mcenderdragon.futurepack:<minecraft version>:<futurepack version>:api") { transitive = false } // compile against the Futurepack API
+    runtimeOnly fg.deobf("redsnakegames.mcenderdragon.futurepack:<minecraft version>:<futurepack version>") { transitive = false }// at runtime, use the full Futurepack jar
 }
 ```
 [Futurepack Translation Project](https://github.com/Wugand/FuturePack-Language)
