@@ -24,8 +24,11 @@ repositories
   }
 }
 dependencies {
-    compileOnly fg.deobf("redsnakegames.mcenderdragon.futurepack:<minecraft version>:<futurepack version>:api") { transitive = false } // compile against the Futurepack API
-    runtimeOnly fg.deobf("redsnakegames.mcenderdragon.futurepack:<minecraft version>:<futurepack version>") { transitive = false }// at runtime, use the full Futurepack jar
+    compileOnly fg.deobf("redsnakegames.mcenderdragon:futurepack:<minecraft version>:<futurepack version>-api") { transitive = false } // compile against the Futurepack API
+    runtimeOnly fg.deobf("redsnakegames.mcenderdragon:futurepack:<minecraft version>-<futurepack version>") { transitive = false }// at runtime, use the full Futurepack jar
+    //example
+    //runtimeOnly fg.deobf("redsnakegames.mcenderdragon:futurepack:1.16.4-31.2.6865")  { transitive = false }
+    //compileOnly fg.deobf("redsnakegames.mcenderdragon:futurepack:1.16.4-31.2.6865-api")  { transitive = false }
 }
 ```
 [Futurepack Translation Project](https://github.com/Wugand/FuturePack-Language)
