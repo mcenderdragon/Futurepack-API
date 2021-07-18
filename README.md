@@ -16,7 +16,7 @@ repositories
 {
   maven {
     name = "ModMaven"
-    url = "https://modmaven.k-4u.nl"//location of the futurepack maven files.
+    url = "https://modmaven.dev"//location of the futurepack maven files.
   }
   maven {
     name = "RedSnakeMaven"
@@ -24,8 +24,9 @@ repositories
   }
 }
 dependencies {
-    compileOnly fg.deobf("redsnakegames.mcenderdragon:futurepack:<minecraft version>-<futurepack version>-api") { transitive = false } // compile against the Futurepack API
-    runtimeOnly fg.deobf("redsnakegames.mcenderdragon:futurepack:<minecraft version>-<futurepack version>") { transitive = false }// at runtime, use the full Futurepack jar
+    compileOnly fg.deobf("redsnakegames.mcenderdragon:futurepack:<minecraft version>-<futurepack version>-api") // compile against the Futurepack API
+    runtimeOnly fg.deobf("redsnakegames.mcenderdragon:futurepack:<minecraft version>-<futurepack version>") // at runtime, use the full Futurepack jar
+    //if it sais forge is missing as dependency, try to add { transitive = false } ; this is fixed with newer futurepack versions
     //example
     //runtimeOnly fg.deobf("redsnakegames.mcenderdragon:futurepack:1.16.4-31.2.6865")  { transitive = false }
     //compileOnly fg.deobf("redsnakegames.mcenderdragon:futurepack:1.16.4-31.2.6865-api")  { transitive = false }
