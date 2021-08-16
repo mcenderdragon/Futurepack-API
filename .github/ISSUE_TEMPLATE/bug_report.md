@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-<!--- Issues without a pack version will be closed without comment. -->
+<!--- Issues without a version will be closed without comment. -->
 **Describe the bug**
 A clear and concise description of what the bug is.
 
@@ -24,9 +24,16 @@ If applicable, add screenshots to help explain your problem.
 **Additional context**
 Add any other context about the problem here.
 
+<!--- Write the exact version and not just "latest", after 2 month nobody know which version was used!. -->
+**Version**
+Minecraft Version:
+Forge Version:
+Futurepack Version: 
+
 **Logs**
 Please use a paste site for logs, instead of putting the file directly in the issue, not only is this easier but also means we can view on mobile when we are not at our computers.
 Here's a list of some paste sites and their size limits:
     https://pastebin.com/ 512KB
     https://hastebin.com/ 400KB
     https://gist.github.com/ 100MB Requires member (Free)
+    
