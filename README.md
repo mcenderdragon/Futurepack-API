@@ -4,7 +4,7 @@
 [![](http://redsnake-games.de/jenkins/api.php?id=futurepack.svg)]()
 
 #  Futurepack Source Repository
-You propably wonder where the source is: not here. Futureack is not open source, but rather visible source. It is here: https://gitlab.com/MCenderdragon/Futurepack. 
+You propably wonder where the source is: not here. Futurpack is not open source, but rather visible source, but feel free to make Merge Requests/Pull Requests. It is at gitlab: https://gitlab.com/MCenderdragon/Futurepack. 
 
 # Futurepack-API
 A small Api for the Futurepack
