@@ -42,4 +42,8 @@ dependencies {
 
 [Discord](https://discord.gg/UpdVfFk)
 
+### Support this project via:
 [<img alt="Patreon" src=http://i.imgur.com/k44o58p.png width=256\>](https://www.patreon.com/mcenderdragon)
+
+[<img alt="Ko-fi" src=https://storage.ko-fi.com/cdn/Kofi_Logo_Blue.svg width=256\>](https://ko-fi.com/mcenderdragon)
+
