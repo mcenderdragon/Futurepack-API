@@ -1,5 +1,5 @@
-[![](http://cf.way2muchnoise.eu/full_futurepack_downloads.svg)](https://minecraft.curseforge.com/projects/futurepack)
-[![](http://cf.way2muchnoise.eu/versions/Available%20For%20Minecraft_futurepack_all.svg)](https://minecraft.curseforge.com/projects/futurepack)
+[![](http://cf.way2muchnoise.eu/full_237333_downloads.svg)](https://minecraft.curseforge.com/projects/futurepack)
+[![](http://cf.way2muchnoise.eu/versions/Available%20For%20Minecraft_237333_all.svg)](https://minecraft.curseforge.com/projects/futurepack)
 
 [![](http://redsnake-games.de/jenkins/api.php?id=futurepack.svg)]()
 
